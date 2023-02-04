@@ -1,0 +1,28 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+export default function useApi(url) {
+    const [data, setData] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
+
+    const fun=() => {
+         (async () => {
+            setIsLoading(true);
+            setIsError(false);
+            try {
+                const response = await axios.post(url, {
+                  title: "foo",
+                  body: "bar",
+                  userId: 1
+                });
+                setData(response.data);
+            } catch (error) {
+                setIsError(true);
+            }
+            setIsLoading(false);
+        })
+    };
+    return [data,isLoading,isError];
+
+}
