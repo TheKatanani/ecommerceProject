@@ -34,6 +34,7 @@ const ItemList = ({ title, items, type }) => {
                             </li>
                         );
                     }
+                    return <p>samething is wrong</p> ;
                 })}
             </ul>
             }
