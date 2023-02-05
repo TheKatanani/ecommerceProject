@@ -1,7 +1,7 @@
 import React from 'react'
 import { ProductCardStyeld } from './styled'
 import { Link } from 'react-router-dom'
-import { MoveToCart, MyCart, Orders, OrdersNull } from '../../Icons'
+import { MoveToCart, OrdersNull } from '../../Icons'
 import { Info } from '../../Global/components'
 import Rating from '../Rating'
 const ProductCard = ({isFull,data:{ description,img, title, price, prevPrice, orders, freeShipping }}) => {

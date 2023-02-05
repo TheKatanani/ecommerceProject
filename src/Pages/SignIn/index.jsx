@@ -29,6 +29,7 @@ function SignIn() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if(!errors&&isChecked);
         validationSchemaSignIn
             .validate(formData, { abortEarly: false })
             .then(() => localStorage.setItem("isAuthenticated",true))//you shod reWrite this component 

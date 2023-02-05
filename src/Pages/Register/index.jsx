@@ -26,11 +26,12 @@ function Register({ handleLogin }) {
         setIsChecked(event.target.checked);
         setFormData({ ...formData, remember: event.target.checked });
     };
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
+        if(!errors&&isChecked);
         validationSchemaRegister
-            .validate(formData, { abortEarly: false })
+        .validate(formData, { abortEarly: false })
             .then(() => handleLogin(formData))
             .catch((err) => setErrors(err.inner));
     };

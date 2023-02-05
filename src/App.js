@@ -1,12 +1,10 @@
 import { ThemeProvider } from 'styled-components';
 import {  useState } from 'react';
-import { darkTheme,lightTheme } from './Global/theme'
+import { lightTheme } from './Global/theme'
 import { GlobalStyle } from './Global/style';
 import { AuthContext, MyContext } from './Context/index';
 import Toggle from './Components/Toggle';
 import MyRoutes from './Routes'
-// import { Route } from 'react-router-dom';
-import {  Route, Routes } from "react-router-dom"
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
