@@ -5,7 +5,8 @@ export const RegisterStyled = styled.div `
     align-items:center;
     justify-content:center;
     width:100%;
-    height:calc(100vh - 74px);
+    margin:30px 0;
+    /* height:calc(100vh - 74px); */
     h1{
         color:${(props) => props.theme.palette.font};
     }

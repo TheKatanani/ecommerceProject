@@ -5,7 +5,8 @@ export const LoginStyle = styled.div `
     align-items:center;
     justify-content:center;
     width:100%;
-    height:calc(100vh - 74px);
+    margin:10px 0;
+    min-height:calc(100vh - 94px);
     h1{
         color:${(props) => props.theme.palette.font};
     }

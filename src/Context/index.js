@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
-export const MyContext=createContext(null);
+export const ThemeContext=createContext(null);
 export const AuthContext = createContext({
-    isAuthenticated: false,
+    isAuthenticated:false,
     setIsAuthenticated: () => {}
   });

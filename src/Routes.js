@@ -11,13 +11,13 @@ import SignIn from "./Pages/SignIn"
 import PrivateRoute from "./PriveteRoutes"
 
 const MyRoutes = ()=>{
-    const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+    const [ isAuthenticated,  ] = useContext(AuthContext);
     return (
         <Routes>
           <Route index element={<Navigate to='/login' />} />
-          <Route path="/login" element={isAuthenticated?<Navigate to='/Home' />:<SignIn setIsAuthenticated={setIsAuthenticated} />} />
+          <Route path="/login" element={isAuthenticated?<Navigate to='/Home' />:<SignIn/>} />
           <Route path="/register" element={isAuthenticated?<Navigate to='/Home' />:<Register />} />
-          <Route path="/Home" element={<PrivateRoute isAuthenticated={isAuthenticated}></PrivateRoute>}>
+          <Route path="/Home" element={<PrivateRoute></PrivateRoute>}>
             <Route index element={<Home />} />
             <Route path="page2" element={<Page2 />} />
             <Route path="page3" element={<Page3 />} />

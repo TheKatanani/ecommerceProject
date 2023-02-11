@@ -36,7 +36,7 @@ export const ProductCardStyeld = styled.div `
                 width:30px;
                 height:30px;
                 border: 1px solid ${(props) =>  props.theme.palette.ColorApp.gray_300};;
-        border-radius: 5px;
+                border-radius: 5px;
             }
         }
         .title{

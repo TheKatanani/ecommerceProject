@@ -17,11 +17,11 @@ const SectionsStyle = styled.div`
 const Sections = () => {
   return (
     <SectionsStyle>
-      <Link to="/Home/page2" className="icon">
+      <Link to="/Home/" className="icon">
         <Profile />
         <p>Profile</p>
       </Link>
-      <Link to="" className="icon">
+      <Link to="/Home/page2" className="icon">
         <Message />
         <p>Message</p>
       </Link>
