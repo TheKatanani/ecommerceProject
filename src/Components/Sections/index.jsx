@@ -13,6 +13,9 @@ const SectionsStyle = styled.div`
         font-size:${(props) => props.theme.fontSizes.body2}rem;
         color:${(props) =>  props.theme.palette.ColorApp.gray_500};
     }
+    @media (max-width: 576px) {
+        display: none;
+    }
 `
 const Sections = () => {
   return (

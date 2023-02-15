@@ -9,7 +9,6 @@ import ImageCard from '../ImageCard'
 const MainSection = () => {
     return (
         <MainSecStyle>
-            <div>
                 <ul>
                     <li  className='active'>
                         <Link to="">Automobiles</Link>
@@ -40,9 +39,8 @@ const MainSection = () => {
                         <Link to="">More category</Link>
                     </li>
                 </ul>
-            </div>
-            <ImageCard img={imgCard} h2="Electronic items"h3="Latest trending"button="Learn more"/>
-            <div>
+            <ImageCard img={imgCard} h2="Electronic items"h3="Latest trending"button="Learn more" display="block"/>
+            <div className='userBox'>
                 <div className='user'>
                     <div>
                         <img src={avatar} alt="avatar" />

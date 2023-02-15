@@ -17,7 +17,7 @@ const MyRoutes = ()=>{
           <Route index element={<Navigate to='/login' />} />
           <Route path="/login" element={isAuthenticated?<Navigate to='/Home' />:<SignIn/>} />
           <Route path="/register" element={isAuthenticated?<Navigate to='/Home' />:<Register />} />
-          <Route path="/Home" element={<PrivateRoute></PrivateRoute>}>
+          <Route path="/Home" element={<PrivateRoute/>}>
             <Route index element={<Home />} />
             <Route path="page2" element={<Page2 />} />
             <Route path="page3" element={<Page3 />} />

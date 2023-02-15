@@ -19,4 +19,10 @@ a{
 ul{
   list-style:none;
 }
+/* Small */
+@media (max-width: 576px) {   
+  html {
+    font-size: 72.5%; /* 62.5% of 16px = 10px */
+  }
+}
 `;

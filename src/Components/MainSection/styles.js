@@ -53,4 +53,11 @@ export const MainSecStyle=styled.div`
             height:32px;
         }
     }
+    @media (max-width: 576px) {
+        height: 180px;
+        padding:0;
+        ul,.userBox,.container{
+            display: none;
+        }
+    }
 `

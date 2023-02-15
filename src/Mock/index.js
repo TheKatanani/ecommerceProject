@@ -4,9 +4,24 @@ import img3 from '../Images/image33.png';
 import img4 from '../Images/Banner.png';
 import img5 from '../Images/image92.png';
 import img6 from '../Images/image92.png'
-import img7 from '../Images/rasm.png'
-import img8 from '../Images/image98.png'
-import img9 from '../Images/image 28.png'
+import img7 from '../Images/rasm.png';
+import img8 from '../Images/image98.png';
+import img9 from '../Images/image 28.png';
+import imgCountry from '../Images/US@2x.png';
+import imgCountry2 from '../Images/DE@2x.png';
+export const footerData = [
+    { title: "About", lis: ["About Us", "Find store", "Categories", "Blogs"] },
+    { title: "Partnership", lis: ["About Us", "Find store", "Categories", "Blogs"] },
+    { title: "Information", lis: ["Help Center", "Money Refund", "Shipping", "Contact us"] },
+    { title: "For users", lis: ["Login", "Register", "Settings", "My Orders"] }
+]
+export const dealsData=[
+    {img:img8,name:"Smart watches",sale:"25"},
+    {img:img,name:"Laptops",sale:"10"},
+    {img:img5,name:"GoPro cameras",sale:"15"},
+    {img:img2,name:"Headphones",sale:"20"},
+    {img:img3,name:"Canon camreras",sale:"45"}
+  ];
 export const selectData = {
     Help: [{
             value: "",
@@ -140,7 +155,31 @@ export const detailsData = {
         "About company",
     ]
 }
+export const recommendedData = [
+    { img, price: '$10.5', description: "T-shirts with multiple colors, for men" },
+    { img:img2, price: '$10.5', description: "T-shirts with multiple colors, for men" },
+    { img:img3, price: '$9.5', description: "T-shirts with multiple colors, for men" },
+    { img:img4, price: '$10.5', description: "T-shirts with multiple colors, for men" },
+    { img:img5, price: '$10.5', description: "T-shirts with multiple colors, for men" },
+    { img:img6, price: '$5.5', description: "T-shirts with multiple colors, for men" },
+    { img:img7, price: '$10.5', description: "T-shirts with multiple colors, for men" },
+    { img:img8, price: '$10.5', description: "T-shirts with multiple colors, for men" },
+    { img:img9, price: '$10.5', description: "T-shirts with multiple colors, for men" },
+    { img:img, price: '$10.5', description: "T-shirts with multiple colors, for men" },
+]
 
+export const countryData = [
+    { imgCountry, title: "United States", description: "shopname.ae" },
+    { imgCountry: imgCountry2, title: "United States", description: "shopname.ae" },
+    { imgCountry, title: "United States", description: "shopname.ae" },
+    { imgCountry: imgCountry2, title: "United States", description: "shopname.ae" },
+    { imgCountry, title: "United States", description: "shopname.ae" },
+    { imgCountry, title: "United States", description: "shopname.ae" },
+    { imgCountry, title: "United States", description: "shopname.ae" },
+    { imgCountry: imgCountry2, title: "United States", description: "shopname.ae" },
+    { imgCountry, title: "United States", description: "shopname.ae" },
+    { imgCountry, title: "United States", description: "shopname.ae" },
+]
 export const cartData = [{
         img: img3,
         title: "Apple Watch Series Space Gray",

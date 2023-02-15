@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div `
-    padding: 0 15px;
+    padding: 0;
     margin: 0 auto;
 /* Small */
 @media (min-width: 768px) {
@@ -68,7 +68,7 @@ export const Info = styled.div`
 `
 export const IconButton = styled.div`
     position:relative;
-     margin:10px 0;
+    margin:10px 0;
     img{
         position:absolute;
         left:11px;

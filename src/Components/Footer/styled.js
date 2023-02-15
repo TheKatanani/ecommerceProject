@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const FooterStyled =styled.div`
+export const FooterStyled = styled.div `
 display: flex;
+flex-wrap: wrap;
 align-items:center;
 height:256px;
 background-color:${(props) => props.theme.palette.main};
@@ -19,13 +20,14 @@ color:${(props) => props.theme.palette.font};
             margin:0 6px;
         }
     }
-    }
+}
     ul{
         flex: 1;
     }
     >div{
         display: flex;
         justify-content:space-between;
+        flex-wrap: wrap;
     }
     .store{
         flex: 1;
@@ -35,10 +37,35 @@ color:${(props) => props.theme.palette.font};
         margin:8px 0 0;
         padding:8px 7px;
     }
-
+    .uls{
+        flex:0.5;
+        display: grid;
+        grid-template-columns: repeat(4,auto);
+        flex-wrap: wrap;
+    }
+    /* Small */
+    @media (max-width: 576px) {
+        height:unset;
+        >div{
+            display: block;
+            text-align: center;
+        }
+        .uls{
+        grid-template-columns: repeat(2,auto);
+        }
+        .stores{
+            display: flex;
+            .store{
+                padding: 0;
+            }
+        }
+        *{
+            margin:10px auto;
+        }
+    }
     
 `
-export const FooterfoStyled =styled.div`
+export const FooterfoStyled = styled.div `
     >div{
         padding:13px;
         display: flex;

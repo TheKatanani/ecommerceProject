@@ -14,6 +14,9 @@ export const MainStayled = styled.div`
   :hover{
     left: -3px;
   }
+@media (max-width: 576px) {
+     display: none;
+ }
 `;
 export const ButtonStayled = styled.button`
 img{
