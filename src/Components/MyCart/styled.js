@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const MyCartStyled =styled.div`
+    flex:1;
     h6{
         font-size:${(props) => props.theme.fontSizes.h6}rem;
         color:${(props) =>  props.theme.palette.font};

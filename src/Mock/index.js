@@ -9,19 +9,202 @@ import img8 from '../Images/image98.png';
 import img9 from '../Images/image 28.png';
 import imgCountry from '../Images/US@2x.png';
 import imgCountry2 from '../Images/DE@2x.png';
-export const footerData = [
-    { title: "About", lis: ["About Us", "Find store", "Categories", "Blogs"] },
-    { title: "Partnership", lis: ["About Us", "Find store", "Categories", "Blogs"] },
-    { title: "Information", lis: ["Help Center", "Money Refund", "Shipping", "Contact us"] },
-    { title: "For users", lis: ["Login", "Register", "Settings", "My Orders"] }
+import imgProduct from '../Images/image33.png'
+import img2Product from '../Images/image23.png'
+import img3Product from '../Images/image35.png'
+
+export const productsData = [{
+        id: 1,
+        isLike:false,
+        isSelected:false,
+        img: imgProduct,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    }, {
+        id: 2,
+        isLike:false,
+        isSelected:false,
+        img: img2Product,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    }, {
+        id: 3,
+        isLike:false,
+        isSelected:false,
+        img: img3Product,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    },
+    {
+        id: 4,
+        isLike:false,
+        isSelected:false,
+        img: imgProduct,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    }, {
+        id: 5,
+        isLike:false,
+        isSelected:false,
+        img: img2Product,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    }, {
+        id: 6,
+        isLike:false,
+        isSelected:false,
+        img: img3Product,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    },
+    {
+        id: 7,
+        isLike:false,
+        isSelected:false,
+        img: imgProduct,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    }, {
+        id: 8,
+        isLike:false,
+        isSelected:false,
+        img: img2Product,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    }, {
+        id: 9,
+        isLike:false,
+        isSelected:false,
+        img: img3Product,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    },
+    {
+        id: 10,
+        isLike:false,
+        isSelected:false,
+        img: imgProduct,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    }, {
+        id: 11,
+        isLike:false,
+        isSelected:false,
+        img: img2Product,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    }, {
+        id: 12,
+        isLike:false,
+        isSelected:false,
+        img: img3Product,
+        title: "Canon Cmera EOS 2000, Black 10x zoom",
+        price: "$998.00",
+        prevPrice: "$1128.00",
+        orders: "174",
+        freeShipping: true,
+        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua`
+    },
 ]
-export const dealsData=[
-    {img:img8,name:"Smart watches",sale:"25"},
-    {img:img,name:"Laptops",sale:"10"},
-    {img:img5,name:"GoPro cameras",sale:"15"},
-    {img:img2,name:"Headphones",sale:"20"},
-    {img:img3,name:"Canon camreras",sale:"45"}
-  ];
+export const footerData = [{
+        title: "About",
+        lis: ["About Us", "Find store", "Categories", "Blogs"]
+    },
+    {
+        title: "Partnership",
+        lis: ["About Us", "Find store", "Categories", "Blogs"]
+    },
+    {
+        title: "Information",
+        lis: ["Help Center", "Money Refund", "Shipping", "Contact us"]
+    },
+    {
+        title: "For users",
+        lis: ["Login", "Register", "Settings", "My Orders"]
+    }
+]
+export const dealsData = [{
+        img: img8,
+        name: "Smart watches",
+        sale: "25"
+    },
+    {
+        img: img,
+        name: "Laptops",
+        sale: "10"
+    },
+    {
+        img: img5,
+        name: "GoPro cameras",
+        sale: "15"
+    },
+    {
+        img: img2,
+        name: "Headphones",
+        sale: "20"
+    },
+    {
+        img: img3,
+        name: "Canon camreras",
+        sale: "45"
+    }
+];
 export const selectData = {
     Help: [{
             value: "",
@@ -91,8 +274,7 @@ export const selectData = {
             label: "category 3"
         }
     ],
-    Qty: [
-        {
+    Qty: [{
             value: "Qty1",
             label: "Qty: 1"
         },
@@ -105,8 +287,7 @@ export const selectData = {
             label: "Qty: 3"
         }
     ],
-    Phone: [
-        {
+    Phone: [{
             value: "Phone1",
             label: "UZ +998"
         },
@@ -155,30 +336,108 @@ export const detailsData = {
         "About company",
     ]
 }
-export const recommendedData = [
-    { img, price: '$10.5', description: "T-shirts with multiple colors, for men" },
-    { img:img2, price: '$10.5', description: "T-shirts with multiple colors, for men" },
-    { img:img3, price: '$9.5', description: "T-shirts with multiple colors, for men" },
-    { img:img4, price: '$10.5', description: "T-shirts with multiple colors, for men" },
-    { img:img5, price: '$10.5', description: "T-shirts with multiple colors, for men" },
-    { img:img6, price: '$5.5', description: "T-shirts with multiple colors, for men" },
-    { img:img7, price: '$10.5', description: "T-shirts with multiple colors, for men" },
-    { img:img8, price: '$10.5', description: "T-shirts with multiple colors, for men" },
-    { img:img9, price: '$10.5', description: "T-shirts with multiple colors, for men" },
-    { img:img, price: '$10.5', description: "T-shirts with multiple colors, for men" },
+export const recommendedData = [{
+        img,
+        price: '$10.5',
+        description: "T-shirts with multiple colors, for men"
+    },
+    {
+        img: img2,
+        price: '$10.5',
+        description: "T-shirts with multiple colors, for men"
+    },
+    {
+        img: img3,
+        price: '$9.5',
+        description: "T-shirts with multiple colors, for men"
+    },
+    {
+        img: img4,
+        price: '$10.5',
+        description: "T-shirts with multiple colors, for men"
+    },
+    {
+        img: img5,
+        price: '$10.5',
+        description: "T-shirts with multiple colors, for men"
+    },
+    {
+        img: img6,
+        price: '$5.5',
+        description: "T-shirts with multiple colors, for men"
+    },
+    {
+        img: img7,
+        price: '$10.5',
+        description: "T-shirts with multiple colors, for men"
+    },
+    {
+        img: img8,
+        price: '$10.5',
+        description: "T-shirts with multiple colors, for men"
+    },
+    {
+        img: img9,
+        price: '$10.5',
+        description: "T-shirts with multiple colors, for men"
+    },
+    {
+        img: img,
+        price: '$10.5',
+        description: "T-shirts with multiple colors, for men"
+    },
 ]
 
-export const countryData = [
-    { imgCountry, title: "United States", description: "shopname.ae" },
-    { imgCountry: imgCountry2, title: "United States", description: "shopname.ae" },
-    { imgCountry, title: "United States", description: "shopname.ae" },
-    { imgCountry: imgCountry2, title: "United States", description: "shopname.ae" },
-    { imgCountry, title: "United States", description: "shopname.ae" },
-    { imgCountry, title: "United States", description: "shopname.ae" },
-    { imgCountry, title: "United States", description: "shopname.ae" },
-    { imgCountry: imgCountry2, title: "United States", description: "shopname.ae" },
-    { imgCountry, title: "United States", description: "shopname.ae" },
-    { imgCountry, title: "United States", description: "shopname.ae" },
+export const countryData = [{
+        imgCountry,
+        title: "United States",
+        description: "shopname.ae"
+    },
+    {
+        imgCountry: imgCountry2,
+        title: "United States",
+        description: "shopname.ae"
+    },
+    {
+        imgCountry,
+        title: "United States",
+        description: "shopname.ae"
+    },
+    {
+        imgCountry: imgCountry2,
+        title: "United States",
+        description: "shopname.ae"
+    },
+    {
+        imgCountry,
+        title: "United States",
+        description: "shopname.ae"
+    },
+    {
+        imgCountry,
+        title: "United States",
+        description: "shopname.ae"
+    },
+    {
+        imgCountry,
+        title: "United States",
+        description: "shopname.ae"
+    },
+    {
+        imgCountry: imgCountry2,
+        title: "United States",
+        description: "shopname.ae"
+    },
+    {
+        imgCountry,
+        title: "United States",
+        description: "shopname.ae"
+    },
+    {
+        imgCountry,
+        title: "United States",
+        description: "shopname.ae"
+    },
 ]
 export const cartData = [{
         img: img3,
@@ -223,37 +482,103 @@ export const cartData = [{
         price: "$7.00 - $99.50"
     },
 ]
-export const HomeData={
-    mydata:{
-        imgcard:{
-            img:img5,h6:"Home and outdoor",button:"Source now"
+export const HomeData = {
+    mydata: {
+        imgcard: {
+            img: img5,
+            h6: "Home and outdoor",
+            button: "Source now"
         },
-        items:[
-            {img:img2,title:"Soft chairs",description:"From USD 19"},
-            {img:img3,title:"Soft chairs",description:"From USD 19"},
-            {img:img4,title:"Soft chairs",description:"From USD 19"},
-            {img:img5,title:"Soft chairs",description:"From USD 19"},
-            {img:img6,title:"Soft chairs",description:"From USD 19"},
-            {img:img7,title:"Soft chairs",description:"From USD 19"},
-            {img:img8,title:"Soft chairs",description:"From USD 19"},
-            {img:img9,title:"Soft chairs",description:"From USD 19"},
-            
+        items: [{
+                img: img2,
+                title: "Soft chairs",
+                description: "From USD 19"
+            },
+            {
+                img: img3,
+                title: "Soft chairs",
+                description: "From USD 19"
+            },
+            {
+                img: img4,
+                title: "Soft chairs",
+                description: "From USD 19"
+            },
+            {
+                img: img5,
+                title: "Soft chairs",
+                description: "From USD 19"
+            },
+            {
+                img: img6,
+                title: "Soft chairs",
+                description: "From USD 19"
+            },
+            {
+                img: img7,
+                title: "Soft chairs",
+                description: "From USD 19"
+            },
+            {
+                img: img8,
+                title: "Soft chairs",
+                description: "From USD 19"
+            },
+            {
+                img: img9,
+                title: "Soft chairs",
+                description: "From USD 19"
+            },
+
         ]
     },
-    mydata2:{
-        imgcard:{
-            img:img8,h6:"Consumer electronics and gadgets",button:"Source now"
+    mydata2: {
+        imgcard: {
+            img: img8,
+            h6: "Consumer electronics and gadgets",
+            button: "Source now"
         },
-        items:[
-            {img:img9,title:"Smart watches",description:"From USD 19"},
-            {img:img4,title:"Smart watches",description:"From USD 19"},
-            {img:img6,title:"Smart watches",description:"From USD 19"},
-            {img:img4,title:"Smart watches",description:"From USD 19"},
-            {img:img7,title:"Smart watches",description:"From USD 19"},
-            {img:img8,title:"Smart watches",description:"From USD 19"},
-            {img:img9,title:"Smart watches",description:"From USD 19"},
-            {img:img3,title:"Smart watches",description:"From USD 19"},
-            
+        items: [{
+                img: img9,
+                title: "Smart watches",
+                description: "From USD 19"
+            },
+            {
+                img: img4,
+                title: "Smart watches",
+                description: "From USD 19"
+            },
+            {
+                img: img6,
+                title: "Smart watches",
+                description: "From USD 19"
+            },
+            {
+                img: img4,
+                title: "Smart watches",
+                description: "From USD 19"
+            },
+            {
+                img: img7,
+                title: "Smart watches",
+                description: "From USD 19"
+            },
+            {
+                img: img8,
+                title: "Smart watches",
+                description: "From USD 19"
+            },
+            {
+                img: img9,
+                title: "Smart watches",
+                description: "From USD 19"
+            },
+            {
+                img: img3,
+                title: "Smart watches",
+                description: "From USD 19"
+            },
+
         ]
     }
 }

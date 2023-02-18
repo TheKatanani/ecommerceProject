@@ -81,11 +81,8 @@ function Register() {
             await validationSchemaRegister.validate(formState, { abortEarly: false });
             const res = await axios.post(`${API}/users/signup`, {
                 name: formState.name,
-                // Surname: formState.Surname,
                 email: formState.email,
                 password: formState.password,
-                // confirmPassword: formState.confirmPassword,
-                // isChecked: formState.isChecked
             });
             if (res.data) {
                 localStorage.setItem('token', res.data.token);

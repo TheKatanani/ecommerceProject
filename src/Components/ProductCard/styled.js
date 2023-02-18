@@ -31,6 +31,12 @@ export const ProductCardStyeld = styled.div `
             right:0px;
             display: flex;
             gap:3px;
+            .Select svg{
+                ${props=>props.isSelected&&`background-color:${props.theme.palette.ColorApp.primary_light}`};
+            }
+            .Like svg{
+                ${props=>props.isLike&&`background-color:${props.theme.palette.ColorApp.primary_light}`};
+            }
             svg{
                 padding:5px;
                 width:30px;

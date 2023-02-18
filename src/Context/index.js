@@ -1,7 +1,10 @@
-import { createContext } from "react";
+import {
+  createContext
+} from "react";
 
-export const ThemeContext=createContext(null);
+export const ThemeContext = createContext(null);
+export const ProductsDataContext = createContext(null);
 export const AuthContext = createContext({
-    isAuthenticated:false,
-    setIsAuthenticated: () => {}
-  });
+  isAuthenticated: false,
+  setIsAuthenticated: () => {}
+});

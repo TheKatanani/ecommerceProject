@@ -1,23 +1,13 @@
 import React from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
-import styled from 'styled-components'
+import { ProductsDataContext } from '../../Context'
 import { Message, MyCart, Orders, Profile } from '../../Icons'
-const SectionsStyle = styled.div`
-    display: flex;
-    gap:23px;
-    .icon{
-          padding:10px 0; 
-          text-align:center;
-        cursor: pointer;
-        font-size:${(props) => props.theme.fontSizes.body2}rem;
-        color:${(props) =>  props.theme.palette.ColorApp.gray_500};
-    }
-    @media (max-width: 576px) {
-        display: none;
-    }
-`
+import { SectionsStyle } from './Styled'
+
 const Sections = () => {
+  const [product,]=useContext(ProductsDataContext);
   return (
     <SectionsStyle>
       <Link to="/Home/" className="icon">
@@ -32,7 +22,7 @@ const Sections = () => {
         <Orders />
         <p>Orders</p>
       </Link >
-      <Link to="/Home/page4" className="icon">
+      <Link to="/Home/page4" className="icon" data-cart={product.reduce((count, item) => count + (item.isSelected ? 1 : 0), 0)}>
         <MyCart />
         <p>My cart</p>
       </Link >

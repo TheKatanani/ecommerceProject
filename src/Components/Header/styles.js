@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Header = styled.header`
     padding:11px 0;
-    svg{
+    .logoBox > svg{
         display: none;
     }
     background-color:${(props)=>props.theme.palette.main};

@@ -11,10 +11,12 @@ export const MainStyle=styled.div`
         width:100%;
         display:grid;
         grid-template-columns: repeat(5,auto);
-        overflow: scroll;
     }
     /* Small */
     @media (max-width: 576px) {
+        .data{
+            overflow-x: scroll;
+        }
         flex-wrap: wrap;
         height:initial;
     }

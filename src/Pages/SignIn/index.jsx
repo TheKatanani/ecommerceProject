@@ -86,7 +86,6 @@ function SignIn() {
                 setIsAuthenticated(true)
             }
         } catch (error) {
-            console.error(error);
             if (error.isAxiosError) {
                 dispatch({ type: ACTIONS.ERROR, errors: { isAxiosError: error.message } });
             } else {
