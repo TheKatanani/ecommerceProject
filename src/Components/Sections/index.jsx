@@ -9,7 +9,7 @@ import { SectionsStyle } from './Styled'
 const Sections = () => {
   const [product,]=useContext(ProductsDataContext);
   return (
-    <SectionsStyle>
+    <SectionsStyle productLength = {product.reduce((count, item) => count + (item.isSelected ? 1 : 0), 0)}>
       <Link to="/Home/" className="icon">
         <Profile />
         <p>Profile</p>
@@ -22,7 +22,7 @@ const Sections = () => {
         <Orders />
         <p>Orders</p>
       </Link >
-      <Link to="/Home/page4" className="icon" data-cart={product.reduce((count, item) => count + (item.isSelected ? 1 : 0), 0)}>
+      <Link to="/Home/page4" className="icon">
         <MyCart />
         <p>My cart</p>
       </Link >

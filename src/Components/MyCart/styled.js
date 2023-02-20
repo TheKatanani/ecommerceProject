@@ -19,6 +19,15 @@ export const MyCartStyled =styled.div`
     .items{
         height:490px;
         overflow-y: scroll;
+        position:relative;
+        .empty{
+            position:absolute;
+            top:50%;
+            left:50%;
+            font-size:${(props) => props.theme.fontSizes.h1}rem;
+            color:${(props) =>  props.theme.palette.font};
+            transform: translate(-50%,-50%);
+        }
         /* Scrollbar */
         ::-webkit-scrollbar {
             width: 1px;

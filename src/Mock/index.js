@@ -12,6 +12,7 @@ import imgCountry2 from '../Images/DE@2x.png';
 import imgProduct from '../Images/image33.png'
 import img2Product from '../Images/image23.png'
 import img3Product from '../Images/image35.png'
+import Rating from '../Components/Rating';
 
 export const productsData = [{
         id: 1,
@@ -23,8 +24,8 @@ export const productsData = [{
         prevPrice: "$1128.00",
         orders: "174",
         freeShipping: true,
-        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua`
+        description: `Size: medium, Color: blue,  Material: Plastic
+        Seller: Artel Market`
     }, {
         id: 2,
         isLike:false,
@@ -47,8 +48,8 @@ export const productsData = [{
         prevPrice: "$1128.00",
         orders: "174",
         freeShipping: true,
-        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua`
+        description: `Size: medium, Color: blue,  Material: Plastic
+        Seller: Artel Market`
     },
     {
         id: 4,
@@ -97,8 +98,7 @@ export const productsData = [{
         prevPrice: "$1128.00",
         orders: "174",
         freeShipping: true,
-        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua`
+        description: `Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit `
     }, {
         id: 8,
         isLike:false,
@@ -109,8 +109,7 @@ export const productsData = [{
         prevPrice: "$1128.00",
         orders: "174",
         freeShipping: true,
-        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua`
+        description: `Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit `
     }, {
         id: 9,
         isLike:false,
@@ -387,7 +386,50 @@ export const recommendedData = [{
         description: "T-shirts with multiple colors, for men"
     },
 ]
-
+export const CatigotyData = {
+    li: [
+        { id: 1, text: "Mobile accessory" },
+        { id: 2, text: "Electronics" },
+        { id: 3, text: "Smartphones" },
+        { id: 4, text: "Modern tech" },
+        { id: 5, text: "Electronics" },
+        { id: 6, text: "Smartphones" },
+        { id: 7, text: "Modern tech" },
+    ],
+    checkbox: [
+        { id: 8, text: "Samsung" },
+        { id: 9, text: "Apple" },
+        { id: 10, text: "Smartphones" },
+        { id: 11, text: "Huawei" },
+        { id: 12, text: "Pocco" },
+        { id: 13, text: "Lenovo" },
+        { id: 14, text: "Modern tech" },
+    ],
+    checkbox2: [
+        { id: 15, text: "Metallic" },
+        { id: 16, text: "Plastic cover" },
+        { id: 17, text: "Super power" },
+        { id: 18, text: "Large Memory" },
+        { id: 19, text: "Electronics" },
+        { id: 20, text: "Smartphones" },
+        { id: 21, text: "Modern tech" },
+    ],
+    radio: [
+        { id: 21, text: "Samsung" },
+        { id: 22, text: "Apple" },
+        { id: 23, text: "Smartphones" },
+        { id: 24, text: "Huawei" },
+        { id: 25, text: "Pocco" },
+        { id: 26, text: "Lenovo" },
+        { id: 27, text: "Modern tech" },
+    ],
+    checkbox3: [
+        { id: 28, text: <Rating num="4"/> },
+        { id: 29, text: <Rating num="3"/> },
+        { id: 30, text: <Rating num="2"/>},
+        { id: 31, text: <Rating num="1"/> },
+    ],
+}
 export const countryData = [{
         imgCountry,
         title: "United States",

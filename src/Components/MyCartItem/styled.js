@@ -6,11 +6,16 @@ export const MyCartItemStyled =styled.div`
     justify-content:space-between;
     margin:10px;
     gap:11px;
+    .content{
+        display: flex;
+        gap:20px;
+    }
     .imgarea{
-        width: 90px;
-        height: 90px;
+        min-width: 90px;
+        min-height: 90px;
         max-width: 90px;
         max-height: 90px;
+        object-fit: contain;
         margin:5px;
         border: 1px solid ${props=> props.theme.palette.ColorApp.gray_300};
         border-radius: 6px;

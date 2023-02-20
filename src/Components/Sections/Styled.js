@@ -12,7 +12,7 @@ export const SectionsStyle = styled.div`
     a:last-child {
       position:relative;
       ::before{
-        content:attr(data-cart);
+        ${props=>props.productLength>0&&`content:'${props.productLength}';`}
         position:absolute;
         top:0;
         right: 0;

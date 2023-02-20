@@ -8,5 +8,9 @@ export const ProductsStyled = styled.div`
             grid-template-columns:repeat(3,auto);
             gap:10px;
         `}
+         @media (max-width: 576px) {
+            grid-template-columns:repeat(1,auto);
+            justify-content:center;
+    }
     }
 `

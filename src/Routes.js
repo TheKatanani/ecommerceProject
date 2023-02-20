@@ -1,18 +1,19 @@
-import { useContext } from "react"
+import { lazy, Suspense, useContext } from "react"
 import { Route, Routes, Navigate } from "react-router-dom"
 import PageNotFound from "./Components/PageNotFound"
 import { AuthContext } from "./Context"
-import Home from "./Pages/Home"
-import Page2 from "./Pages/Page2"
-import Page3 from "./Pages/Page3"
-import Page4 from "./Pages/Page4"
-import Register from "./Pages/Register"
-import SignIn from "./Pages/SignIn"
-import PrivateRoute from "./PriveteRoutes"
-
+import Loading from "./Components/Loading"
+const Home = lazy(()=>import("./Pages/Home"))
+const Page2 = lazy(()=>import("./Pages/Page2"))
+const Page3 = lazy(()=>import("./Pages/Page3"))
+const Page4 = lazy(()=>import("./Pages/Page4"))
+const Register = lazy(()=>import("./Pages/Register"))
+const SignIn = lazy(()=>import("./Pages/SignIn"))
+const PrivateRoute = lazy(()=>import("./PriveteRoutes"))
 const MyRoutes = ()=>{
     const [ isAuthenticated,  ] = useContext(AuthContext);
     return (
+      <Suspense fallback={<Loading/>}>
         <Routes>
           <Route index element={<Navigate to='/login' />} />
           <Route path="/login" element={isAuthenticated?<Navigate to='/Home' />:<SignIn/>} />
@@ -26,6 +27,7 @@ const MyRoutes = ()=>{
           </Route>
             <Route path="/*" element={<PageNotFound/>} />
         </Routes>
+      </Suspense>
     )
 }
 export default MyRoutes;
