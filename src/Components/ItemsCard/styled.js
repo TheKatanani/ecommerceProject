@@ -16,6 +16,9 @@ export const ItemsCardStyled = styled.div `
         `:`
         grid-template-columns:repeat(4,1fr);
         `}
+        @media (max-width: 576px) {
+            grid-template-columns:repeat(1,1fr);
+        }
         gap:20px;
         justify-content:space-between;
         button{

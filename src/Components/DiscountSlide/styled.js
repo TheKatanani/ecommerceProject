@@ -21,6 +21,9 @@ export const DiscountSlideStyled =styled.div`
         width:fit-content;
         position:relative;
         padding:10px;
+        @media (max-width: 576px) {
+            padding: 3px 5px;
+        }
     }
     position: relative;
     ::before{
@@ -32,5 +35,9 @@ export const DiscountSlideStyled =styled.div`
         height:200px;
         transform:skewX(28deg);
         background: #005ADE;
+        @media (max-width: 576px) {
+            width:160px;
+            transform:skewX(16deg);
+        }
     }
 `

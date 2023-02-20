@@ -23,7 +23,7 @@ const MyCartItem = ({ handleRemoveItem, data: { img, title, price, description, 
           </div>
         </div>
       </div>
-      <div className="text">
+      <div className="quntity">
         <p className='price'>{price}</p>
         <Select
           defualt

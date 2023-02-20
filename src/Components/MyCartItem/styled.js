@@ -4,6 +4,7 @@ export const MyCartItemStyled =styled.div`
     display: flex;
     align-items:flex-start;
     justify-content:space-between;
+    flex-wrap:wrap;
     margin:10px;
     gap:11px;
     .content{
@@ -28,7 +29,7 @@ export const MyCartItemStyled =styled.div`
                 max-height:80%;
             }
     }
-    .text{
+    .text ,.quntity{
     margin:10px 0;
     .title{
         margin:0 0 7px;
@@ -60,5 +61,26 @@ export const MyCartItemStyled =styled.div`
     select{
         margin:12px 0 0%;
         width:123px;
+    }
+    @media (max-width: 576px) {
+    .quntity{
+        margin:0 0 10px;
+        width:100%;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        select{
+            order: -1;
+        }
+    }
+    .content{
+    gap:0px;
+    }
+    .imgarea{
+        min-width: 70px;
+        min-height: 70px;
+        max-width: 70px;
+        max-height: 70px;
+    }
     }
 `

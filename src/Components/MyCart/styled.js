@@ -8,7 +8,6 @@ export const MyCartStyled =styled.div`
         margin:10px 0;
     }
     .container{
-
         padding:20px;
         background-color:${props=>props.theme.palette.main};
         border: 1px solid ${props=> props.theme.palette.ColorApp.gray_300};
@@ -54,6 +53,11 @@ export const MyCartStyled =styled.div`
             padding:10px;
             width:fit-content;
         }
+    }
+}
+@media (max-width: 576px) {
+    .container{
+        padding:8px;
     }
 }
 `

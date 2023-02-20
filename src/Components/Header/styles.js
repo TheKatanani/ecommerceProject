@@ -29,6 +29,14 @@ export const Header = styled.header`
             }
         }
     }
-
+    .layout{
+        position:fixed;
+        top:0;
+        width:100vw;
+        height:100vh;
+        background-color:#00000052;
+        z-index:9999;
+        transition: 0.3s;
+    }
 `
 

@@ -15,7 +15,7 @@ export const MainStayled = styled.div`
     left: -3px;
   }
 @media (max-width: 576px) {
-     display: none;
+  display: none;
  }
 `;
 export const ButtonStayled = styled.button`
