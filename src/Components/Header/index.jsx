@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useContext } from 'react'
+import { ThemeContext } from '../../Context'
 import { Container } from '../../Global/components'
 import {  Menu3 } from '../../Icons'
 import Category from '../Category'
@@ -10,13 +12,14 @@ import { Header as Myheader } from './styles'
 
 const Header = ({page}) => {
   const [show,setShow]=useState(false)
+  const [theme ] = useContext(ThemeContext)
   return (
     <Myheader page={page}>
           <Container>
             <div style={{padding:"0 15px"}}>
               <div  className='logoBox'>
                 <div className="menu" onClick={()=>setShow(true)}>
-                  <Menu3 color="#1C1C1C"/>
+                  <Menu3 color={theme.palette.font}/>
                 </div>
                 <Logo/>
               </div>

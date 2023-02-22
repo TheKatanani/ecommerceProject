@@ -5,6 +5,9 @@ export const Header = styled.header`
     .logoBox > svg{
         display: none;
     }
+    .menu{
+        display: none;
+    }
     background-color:${(props)=>props.theme.palette.main};
     >div>div{
         display: flex;
@@ -15,6 +18,9 @@ export const Header = styled.header`
     /* Small */
     @media (max-width: 576px) {
         >div>div{
+            .menu{
+                display: block;
+            }
         flex-wrap: wrap;
         justify-content:flex-start;
         }

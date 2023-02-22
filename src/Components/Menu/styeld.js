@@ -51,4 +51,8 @@ export const MenuStyled = styled.div`
             }
         }
     }
+    display: none;
+    @media (max-width: 576px) {
+        display: block;
+    }
 `
