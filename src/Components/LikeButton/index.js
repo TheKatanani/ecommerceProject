@@ -1,18 +1,10 @@
 import React from 'react'
-import { useContext } from 'react'
-import { ProductsDataContext } from '../../Context'
+import useProducts from '../../Hook/useProducts';
 import {  OrdersNull } from '../../Icons';
 const LikeButton = ({id}) => {
-    const [,setProducts]=useContext(ProductsDataContext);
-const LikeHandler = (id)=>{
-    setProducts(prev=>{
-    return  prev.map(el=>el.id===id?(
-        {...el,isLike:(el.isLike?false:true)}
-      ):el)
-    })
-}
+    const { likeItem} = useProducts()
   return (
-    <div className='Like' onClick={()=>LikeHandler(id)}>
+    <div className='Like' onClick={()=>likeItem(id)}>
         <OrdersNull/>
     </div>
   )

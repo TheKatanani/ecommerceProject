@@ -4,7 +4,6 @@ export const MyCartItemStyled =styled.div`
     display: flex;
     align-items:flex-start;
     justify-content:space-between;
-    flex-wrap:wrap;
     margin:10px;
     gap:11px;
     .content{
@@ -63,7 +62,8 @@ export const MyCartItemStyled =styled.div`
         width:123px;
     }
     @media (max-width: 576px) {
-    .quntity{
+        flex-wrap:wrap;
+        .quntity{
         margin:0 0 10px;
         width:100%;
         display: flex;

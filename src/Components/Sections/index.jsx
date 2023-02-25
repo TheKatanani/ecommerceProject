@@ -1,15 +1,13 @@
-import React from 'react'
-import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-
-import { ProductsDataContext } from '../../Context'
+import useProducts from '../../Hook/useProducts'
 import { Message, MyCart, Orders, Profile } from '../../Icons'
 import { SectionsStyle } from './Styled'
 
 const Sections = () => {
-  const [product,]=useContext(ProductsDataContext);
+  const { total} = useProducts()
+
   return (
-    <SectionsStyle productLength = {product.reduce((count, item) => count + (item.isSelected ? 1 : 0), 0)}>
+    <SectionsStyle productLength = {total}>
       <Link to="/Home/" className="icon">
         <Profile />
         <p>Profile</p>

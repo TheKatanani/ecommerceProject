@@ -4,7 +4,7 @@ import { selectData } from '../../Mock';
 import Select from '../Select';
 import { MyCartItemStyled } from './styled'
 
-const MyCartItem = ({ handleRemoveItem, data: { img, title, price, description, id } }) => {
+const MyCartItem = ({ removeFromCart, data: { img, title, price, description, id } }) => {
 
   const [qty, setQty] = useState("");
 
@@ -18,7 +18,7 @@ const MyCartItem = ({ handleRemoveItem, data: { img, title, price, description, 
           <p className='title'>{title}</p>
           <p className='details'>{description}</p>
           <div className="buttons">
-            <WhitePrimaryButton onClick={() => handleRemoveItem(id)}> Remove</WhitePrimaryButton>
+            <WhitePrimaryButton onClick={() => removeFromCart(id)}> Remove</WhitePrimaryButton>
             <WhitePrimaryButton> Save for later</WhitePrimaryButton>
           </div>
         </div>

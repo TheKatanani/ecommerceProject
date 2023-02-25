@@ -1,16 +1,16 @@
-import React , { useContext } from 'react'
-import { ProductsDataContext } from '../../Context'
+import useProducts from '../../Hook/useProducts'
 import ProductCard from '../ProductCard'
 import SliderControl from '../SliderControl'
 import { ProductsStyled } from './styled'
 
 const Products = ({isFull}) => {
-    const [productsData,]=useContext(ProductsDataContext);
+    const {  products} = useProducts()
+
     const myData=()=>{
         if(isFull){
-            return productsData.slice(0,6);
+            return products.slice(0,6);
         }
-        return productsData.slice(0,9);
+        return products.slice(0,9);
     }
   return (
     <ProductsStyled full={isFull}>
