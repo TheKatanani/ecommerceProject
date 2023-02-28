@@ -6,4 +6,5 @@ export const ContentMainStyled = styled.div`
     padding:20px;
     gap:5px;
     background-color:${(props) => props.theme.palette.main};
+    justify-content: space-evenly;
 `

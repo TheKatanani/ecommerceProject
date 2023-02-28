@@ -22,7 +22,10 @@ export const SectionsStyle = styled.div`
         border-radius: 50%;
       }
     }
-    @media (max-width: 576px) {
+    ${({theme:{media}})=>media.xs}{
         display: none;
     }
+    ${({theme:{media}})=>media.xl}{
+  order:3
+}
 `

@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const AsideItemsStayled = styled.div`
     background-color:${(props) =>  props.theme.palette.main};
     flex: 0.33;
-    @media (max-width: 576px) {
+    min-width: 250px;
+    ${({theme:{media}})=>media.xs}{
         flex: 1;
     }
     margin:30px 0;

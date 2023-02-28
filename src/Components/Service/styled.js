@@ -3,7 +3,6 @@ export const ServiceStyled = styled.div`
     margin:33px 0;
     .content{
         display: flex;
-        flex-wrap: wrap;
         justify-content:space-between;
         align-items:center;
     }
@@ -12,11 +11,26 @@ export const ServiceStyled = styled.div`
         font-size:${(props) => props.theme.fontSizes.h6}rem;
         margin: 15px 0;
     }
-    /* Small */
-    @media (max-width: 576px) {
+    ${({theme:{media}})=>media.xs}{
+        .content{
+            flex-wrap: wrap;
+        }
+        padding:8px;
+        .content{
+        justify-content:center;
+        gap:20px;
+        .content{
+            justify-content:flex-start
+        }
+    }
+}
+${({theme:{media}})=>media.s} and ${"(max-width:1199px)"}{
+    .content{
+        flex-wrap: wrap;
+    }
         padding:8px;
     .content{
-        justify-content:center;
+        justify-content:space-evenly;
         gap:20px;
         .content{
             justify-content:flex-start

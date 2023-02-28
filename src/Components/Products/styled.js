@@ -5,11 +5,12 @@ export const ProductsStyled = styled.div`
         margin: 20px 0 30px;
         ${props=>!props.full&&`
             display: grid;
-            grid-template-columns:repeat(3,auto);
+            grid-template-columns:repeat(auto-fill,minmax(250px,auto));
+            justify-content:space-between;
             gap:10px;
         `}
-         @media (max-width: 576px) {
-            grid-template-columns:repeat(1,auto);
+         ${({theme:{media}})=>media.xs} {
+            /* grid-template-columns:repeat(1,auto); */
             justify-content:center;
     }
     }

@@ -6,7 +6,7 @@ import Range from '../Range'
 
 const AsideStyle=styled.aside`
     width:240px;
-    @media (max-width: 576px) {
+    ${({theme:{media}})=>`${media.xs} or (${media.s.split("@media")[1]} and (max-width: 992px))`}{ 
         display: none;
     }
 `

@@ -22,7 +22,7 @@ export const CatigoryStyled = styled.div `
             color:${props=>props.theme.palette.font};
         }
         ${props=>props.page==="page4"&&`display:none;`}
-        @media (max-width: 576px) {
+        ${({theme:{media}})=>media.xs}{
             overflow-x:scroll;
             svg,li:nth-last-child(1),li:nth-last-child(2){
                 display: none;
@@ -37,5 +37,9 @@ export const CatigoryStyled = styled.div `
                     color:${props=>props.theme.palette.ColorApp.primary};
                 }
             }
+    }
+    ${({theme:{media}})=>media.s}{
+        flex-wrap:wrap;
+        justify-content:space-around;
     }
     `

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 export const CountryStyled = styled.div`
     .content{
         display: grid;
-        grid-template-columns:repeat(5,auto);
+        grid-template-columns:repeat(auto-fill,160px);
         justify-content:space-between;
     }
     h3{
@@ -10,13 +10,11 @@ export const CountryStyled = styled.div`
         font-size:${(props) => props.theme.fontSizes.h6}rem;
         margin: 15px 0;
     }
-    /* Small */
-    @media (max-width: 576px) {
+    ${({theme:{media}})=>media.s}{
         h3{
             padding:8px;
         }
         .content{
-            grid-template-columns:repeat(2,auto);
             justify-content:space-evenly;
         }
     }

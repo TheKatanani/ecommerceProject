@@ -37,10 +37,12 @@ background-color:${(props) => props.theme.palette.main};
     .title,.source{
         display: none;
     }
-    /* Small */
-    @media (max-width: 576px) {
+    ${({theme:{media}})=>`${media.xs} or (${media.s.split("@media")[1]} and (max-width: 992px))`} {
         *{
             margin:0 auto;
+        }
+        .contint{
+            display: none;
         }
         display: block;
         .items{

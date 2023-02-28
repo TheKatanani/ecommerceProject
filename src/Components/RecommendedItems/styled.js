@@ -2,7 +2,8 @@ import styled from 'styled-components'
 export const RecommendedItemsStyled = styled.div`
     >div{
         display: grid;
-        grid-template-columns:repeat(5,auto);
+        grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+        justify-content: space-between;
         gap:20px;
     }
     h3{
@@ -10,11 +11,10 @@ export const RecommendedItemsStyled = styled.div`
         font-size:${(props) => props.theme.fontSizes.body}rem;
         margin: 15px 0;
     }
-    /* Small */
-    @media (max-width: 576px) {
+    ${({theme:{media}})=>media.s}  and ${"(max-width:991px)"}  {
         padding:8px;
         >div{
-            grid-template-columns:repeat(2,auto);
+            justify-content: space-evenly;
             gap:8px;
         }
     }

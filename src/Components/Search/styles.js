@@ -46,7 +46,7 @@ button:hover {
   opacity:0.8;
 }
 
-@media (max-width: 576px) {
+${({theme})=>theme.media.xs}{
   input[type="text"] {
     width:92vw;
     border-radius:4px;
@@ -59,4 +59,8 @@ button:hover {
 button {
   display: none;
 }
+${({theme})=>theme.media.s}{
+        order:3
+      }
+
 `

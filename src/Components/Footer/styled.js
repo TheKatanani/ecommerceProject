@@ -40,11 +40,10 @@ color:${(props) => props.theme.palette.font};
     .uls{
         flex:0.5;
         display: grid;
-        grid-template-columns: repeat(4,auto);
+        grid-template-columns: repeat(auto-fill,130px);
         flex-wrap: wrap;
     }
-    /* Small */
-    @media (max-width: 576px) {
+        ${({theme:{media}})=>`${media.xs} or (${media.s.split("@media")[1]} and (max-width: 992px))`}{ 
         height:unset;
         >div{
             display: block;

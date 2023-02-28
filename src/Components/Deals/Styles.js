@@ -12,8 +12,7 @@ export const MainStyle=styled.div`
         display:grid;
         grid-template-columns: repeat(5,auto);
     }
-    /* Small */
-    @media (max-width: 576px) {
+        ${({theme:{media}})=>`${media.xs} or (${media.s.split("@media")[1]} and (max-width: 1199px))`}{ 
         .data{
             overflow-x: scroll;
         }
