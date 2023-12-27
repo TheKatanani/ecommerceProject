@@ -152,6 +152,9 @@ function SignIn() {
                         </IconButton>
                         <p>Don't have an account? <Link to="/Register">Register</Link></p>
                     </main>
+                <Link to="/home" className="icon">
+                    <p>back to home page</p>
+                </Link>
                 </Container>
             </LoginStyle>
             <SignInFooter />

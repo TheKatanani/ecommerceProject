@@ -181,6 +181,9 @@ function Register() {
                         </form>
                         <p>Already have an accaunt? <Link to="/">Logn in </Link></p>
                     </main>
+                    <Link to="/home" className="icon">
+                    <p>back to home page</p>
+                </Link>
                 </Container>
             </RegisterStyled>
             <SignFooter />
