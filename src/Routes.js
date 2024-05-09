@@ -12,6 +12,7 @@ const SignIn = lazy(() => import("./Pages/SignIn"));
 const PrivateRoute = lazy(() => import("./PriveteRoutes"));
 const MyRoutes = () => {
   const [isAuthenticated] = useContext(AuthContext);
+  console.log(isAuthenticated)
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
@@ -24,7 +25,7 @@ const MyRoutes = () => {
           path="/register"
           element={isAuthenticated ? <Navigate to="/home" /> : <Register />}
         />
-        <Route path="/home" element={<Home />} />
+        <Route path="/home" element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
         <Route path="/page2" element={<Page2 />} />
         <Route path="/page3" element={<Page3 />} />
         <Route path="/page4" element={<PrivateRoute />}>
