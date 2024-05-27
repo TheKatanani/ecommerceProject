@@ -4,24 +4,26 @@ import { selectData } from '../../Mock';
 import Select from '../Select';
 import { MyCartItemStyled } from './styled'
 
-const MyCartItem = ({ data: { img, title, price, details } }) => {
+const MyCartItem = ({ removeFromCart, data: { img, title, price, description, id } }) => {
 
   const [qty, setQty] = useState("");
 
   return (
     <MyCartItemStyled>
-      <div className="imgarea">
-        <img src={img} alt="" />
-      </div>
-      <div className="text">
-        <p className='title'>{title}</p>
-        <p className='details'>{details}</p>
-        <div className="buttons">
-          <WhitePrimaryButton> Remove</WhitePrimaryButton>
-          <WhitePrimaryButton> Move to cart</WhitePrimaryButton>
+      <div className='content'> 
+        <div className="imgarea">
+          <img src={img} alt="" />
+        </div>
+        <div className="text">
+          <p className='title'>{title}</p>
+          <p className='details'>{description}</p>
+          <div className="buttons">
+            <WhitePrimaryButton onClick={() => removeFromCart(id)}> Remove</WhitePrimaryButton>
+            <WhitePrimaryButton> Save for later</WhitePrimaryButton>
+          </div>
         </div>
       </div>
-      <div className="text">
+      <div className="quntity">
         <p className='price'>{price}</p>
         <Select
           defualt

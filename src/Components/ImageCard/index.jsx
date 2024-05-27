@@ -3,14 +3,17 @@ import styled from 'styled-components'
 import { MainButton } from '../../Global/components'
 const ImgStyled = styled.div`
         background-image: url(${props => props.src});
-        height:100%;
+        /* Small */
+        @media (max-width: 576px) {
+            height: 257px;
+            display:${props=>props.display};
+    }
         background-size: cover;
         flex: 1;
         padding:0 2.5rem;
         border-radius: 6px;
         .contint{
-            margin-top: 3.5rem;
-            height: 1px;
+            padding:3.5rem 0;
             h3,h2,h6{
                 color:${props => props.theme.palette.ColorApp.dark};
             }
@@ -33,9 +36,9 @@ const ImgStyled = styled.div`
             }
         }
 `
-const ImageCard = ({ button, h3, h2, h6,img }) => {
+const ImageCard = ({ button, h3, h2, h6,img,display="none" }) => {
     return (
-        <ImgStyled src={img}>
+        <ImgStyled src={img} display={display}>
             <div className="contint">
                 {h3 && <h3>{h3}</h3>}
                 {h2 && <h2>{h2}</h2>}

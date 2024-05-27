@@ -18,7 +18,9 @@ input[type="text"] {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   border: 2px solid ${props=>props.theme.palette.ColorApp.primary};
-  border-right: none;
+  @media (min-width: 576px) {
+    border-right: none;
+  }
   color:${props=>props.theme.palette.ColorApp.gray_500};
   background-color:${props=>props.theme.palette.page};
 }
@@ -43,5 +45,22 @@ button {
 button:hover {
   opacity:0.8;
 }
+
+${({theme})=>theme.media.xs}{
+  input[type="text"] {
+    width:92vw;
+    border-radius:4px;
+    border-color:${props=>props.theme.palette.ColorApp.gray_500};
+  }
+  select{
+    display:none;
+  }
+}
+button {
+  display: none;
+}
+${({theme})=>theme.media.s}{
+        order:3
+      }
 
 `

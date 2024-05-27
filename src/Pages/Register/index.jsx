@@ -1,40 +1,104 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useReducer } from 'react';
+import { Link } from 'react-router-dom';
 import { validationSchemaRegister } from '../../validationSchema';
-import { RegisterStyled } from './styles';
 import Input from '../../Components/Input';
 import Checkbox from '../../Components/Checkbox';
-import { Link } from 'react-router-dom';
 import SignFooter from '../../Components/SignFooter';
-
-import { Container, LogInButton } from '../../Global/components';
 import Select from '../../Components/Select';
+import { Container, LogInButton } from '../../Global/components';
+import { RegisterStyled } from './styles';
 import { selectData } from '../../Mock';
+import axios from 'axios';
+import { API } from '../../API';
+import { AuthContext } from '../../Context';
+import ErrorForm from '../../Components/ErrorForm';
+import { ACTIONS } from '../../Actions';
+const initialState = {
+    name: "",
+    Surname: "",
+    email: "",
+    password: "",
+    phoneNumber: "",
+    confirmPassword: "",
+    error: {},
+    passwordStrength: "",
+    selectPhone: "",
+    isWrongRepeat: false,
+    isSuccessfullyRegistered: false,
+    isChecked: false,
+    isLoading: false,
+};
 
+const reducer = (state, action) => {
+    switch (action.type) {
+        case ACTIONS.HANDLE_INPUT_CHANGE:
+            return {
+                ...state,
+                [action.id]: action.value,
+            };
+        case ACTIONS.HANDLE_CHECKBOX_CHANGE:
+            return {
+                ...state,
+                isChecked: action.checked,
+            };
+        case ACTIONS.LOADING:
+            return {
+                ...state,
+                isLoading: action.isLoading,
+            };
+        case ACTIONS.ERROR:
+            return {
+                ...state,
+                error: action.error,
+            };
+        case ACTIONS.SELECT_PHONE:
+            return {
+                ...state,
+                selectPhone: action.value,
+            };
+        default:
+            return state;
+    }
+};
 
-function Register({ handleLogin }) {
-    const [formData, setFormData] = useState({ name: '', password: '', agree: false, Surname: "", email: "" });
-    const [errors, setErrors] = useState({});
-    const [isChecked, setIsChecked] = useState(false);
-    const [Phone, setPhone] = useState("");
+function Register() {
+    const [formState, dispatch] = useReducer(reducer, initialState);
+    const [, setIsAuthenticated] = useContext(AuthContext);
 
     const handleInputChange = (event) => {
         const { id, value } = event.target;
-        setFormData({ ...formData, [id]: value });
+        dispatch({ type: ACTIONS.HANDLE_INPUT_CHANGE, id, value });
+    };
+    useEffect(() => {
+        return () => {
+            dispatch({ type: ACTIONS.REGISTED, value: false })
+        }
+    }, [])
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        dispatch({ type: ACTIONS.LOADING, isLoading: true });
+        try {
+            await validationSchemaRegister.validate(formState, { abortEarly: false });
+            const res = await axios.post(`${API}/users/signup`, {
+                name: formState.name,
+                email: formState.email,
+                password: formState.password,
+            });
+            if (res.data) {
+                localStorage.setItem('token', res.data.token);
+                setIsAuthenticated(true)
+            }
+        } catch (error) {
+            const errors = error.inner?.reduce((acc, { path, message }) => {
+                acc[path] = message;
+                return acc;
+            }, {});
+            dispatch({ type: ACTIONS.ERROR, error: errors });
+        } finally {
+            dispatch({ type: ACTIONS.LOADING, isLoading: false });
+        }
     };
 
-    const handleCheckboxChange = (event) => {
-        setIsChecked(event.target.checked);
-        setFormData({ ...formData, remember: event.target.checked });
-    };
-    
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if(!errors&&isChecked);
-        validationSchemaRegister
-        .validate(formData, { abortEarly: false })
-            .then(() => handleLogin(formData))
-            .catch((err) => setErrors(err.inner));
-    };
     return (
         <>
             <RegisterStyled>
@@ -42,15 +106,16 @@ function Register({ handleLogin }) {
                     <main>
                         <h1>Register</h1>
                         <form onSubmit={handleSubmit}>
+                            {formState.error?.name && <ErrorForm>{formState.error?.name}</ErrorForm>}
+                            {formState.error?.Surname && <ErrorForm>{formState.error?.Surname}</ErrorForm>}
                             <div className="name">
-
                                 <Input
                                     onChange={handleInputChange}
                                     id="name"
                                     type="text"
                                     placeholder="Type here"
                                     label="Name"
-                                    value={formData.name}
+                                    value={formState.name}
                                 />
                                 <Input
                                     onChange={handleInputChange}
@@ -58,60 +123,67 @@ function Register({ handleLogin }) {
                                     type="text"
                                     placeholder="Type here"
                                     label="Surname"
-                                    value={formData.Surname}
+                                    value={formState.Surname}
                                 />
                             </div>
                             {/* *************************** */}
-
+                            {formState.error?.email && <ErrorForm>{formState.error?.email}</ErrorForm>}
                             <Input
                                 onChange={handleInputChange}
-                                id="password"
+                                id="email"
                                 type="email"
                                 placeholder="example@mail.com"
                                 label="Your e-mail "
-                                value={formData.email}
+                                value={formState.email}
                             />
+                            {formState.error?.phoneNumber && <ErrorForm>{formState.error?.phoneNumber}</ErrorForm>}
                             <div className="phone">
                                 <label htmlFor="Phone">Phone</label>
                                 <div>
                                     <Select
                                         defualt
-                                        value={Phone}
-                                        onChange={e => setPhone(e.target.value)}
+                                        value={formState.selectPhone}
+                                        onChange={e => dispatch({ type: ACTIONS.SELECT_PHONE, value: e.target.value })}
                                         options={selectData.Phone}
                                     />
                                     <Input
                                         onChange={handleInputChange}
-                                        id="Phone"
+                                        id="phoneNumber"
                                         type="number"
                                         placeholder="00-000-00-00"
                                         label=""
-                                        value={formData.password}
+                                        value={formState.phoneNumber}
                                     />
                                 </div>
                             </div>
+                            {formState.error?.password && <ErrorForm>{formState.error?.password}</ErrorForm>}
                             <Input
                                 onChange={handleInputChange}
                                 id="password"
                                 type="Password"
                                 placeholder="Type here"
                                 label="Password"
-                                value={formData.password}
+                                value={formState.password}
                             />
+                            {formState.error?.confirmPassword && <ErrorForm>{formState.error?.confirmPassword}</ErrorForm>}
                             <Input
                                 onChange={handleInputChange}
-                                id="rePassword"
+                                id="confirmPassword"
                                 type="Password"
                                 placeholder="Type here"
                                 label="Repeat password"
-                                value={formData.password}
+                                value={formState.confirmPassword}
                             />
                             {/* *********************** */}
-                            <LogInButton type="submit">Register now</LogInButton>
-                            <Checkbox id="agree" label="I agree with " primary="Terms and Conditions" onChange={handleCheckboxChange} />
+                            <LogInButton type="submit">{formState.isLoading ? "loading..." : "Register now"}</LogInButton>
+                            {formState.error?.isChecked && <ErrorForm>{formState.error?.isChecked}</ErrorForm>}
+                            <Checkbox id="agree" label="I agree with " primary="Terms and Conditions" onChange={(e) => dispatch({ type: ACTIONS.HANDLE_CHECKBOX_CHANGE, checked: e.target.checked })} />
                         </form>
                         <p>Already have an accaunt? <Link to="/">Logn in </Link></p>
                     </main>
+                    <Link to="/home" className="icon">
+                    <p>back to home page</p>
+                </Link>
                 </Container>
             </RegisterStyled>
             <SignFooter />

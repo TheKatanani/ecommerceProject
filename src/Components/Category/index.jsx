@@ -5,17 +5,20 @@ import { CatigoryStyled } from './styles'
 import { Menu3 } from '../../Icons'
 import Select from '../Select'
 import { selectData } from '../../Mock'
+import { useContext } from 'react'
+import { ThemeContext } from '../../Context'
 
 const Category = ({ page }) => {
     const [Help, setHelp] = useState("");
     const [Ship, setShip] = useState("");
     const [Language, setLanguage] = useState("");
+  const [theme ] = useContext(ThemeContext)
     return (
         <>
             <CatigoryStyled page={page}>
                 <ul>
                     <li>
-                        <Link to=""><Menu3 /> All category</Link>
+                        <Link to=""><Menu3 color={theme.palette.font}/> All category</Link>
                     </li>
                     <li>
                         <Link to="">Hot offers</Link>

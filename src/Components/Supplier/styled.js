@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const SupplierStyled = styled.div `
         width:280px;
+        @media (max-width: 576px) {
+            flex: 1;
+        }
         height:fit-content;
         padding:16px;
         border: 1px solid ${(props) =>  props.theme.palette.ColorApp.gray_200};

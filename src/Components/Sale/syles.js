@@ -9,10 +9,17 @@ export const Divstyled=styled.div`
   .img{
     width:140px;
     height:140px;
+    margin:0 auto;
     overflow: hidden;  
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    padding: 8px;
   }  
     img{
+      width:80%;
       margin:0 auto;
+      background-size: cover;
     }
     p{
       color:${(props) => props.theme.palette.font};
@@ -27,5 +34,9 @@ export const Divstyled=styled.div`
       margin:7px auto;
       border-radius: 29px;
     }
-
+  /* Small */
+    @media (max-width: 576px) {
+        width:fit-content;
+    }
+width:100%;
 `;

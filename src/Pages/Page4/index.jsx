@@ -2,7 +2,6 @@ import React from 'react'
 import Footer from '../../Components/Footer'
 import Header from '../../Components/Header'
 import { Container } from '../../Global/components'
-import styled from 'styled-components'
 import ItemsCard from '../../Components/ItemsCard'
 import DiscountSlide from '../../Components/DiscountSlide'
 import MyCart from '../../Components/MyCart'
@@ -10,22 +9,8 @@ import Coupon from '../../Components/Coupon'
 import Summary from '../../Components/Summary'
 import FeatureItem from '../../Components/FeatureItem'
 import { Message } from '../../Icons'
-const PageStyled = styled.div`
-    .flex,.features{
-      display: flex;
-      justify-content:space-between;
-      gap:20px;
-    }
-    .features{
-      justify-content:flex-start;
-      align-items:center;
-      gap:40px;
-      margin:20px 0;
-    }
-    aside{
-      margin-top: 47px;
-    }
-`
+import { PageStyled } from './styled'
+
 const Page4 = () => {
   return (
     <PageStyled page="page4">

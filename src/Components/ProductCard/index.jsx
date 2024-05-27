@@ -1,12 +1,13 @@
 import React from 'react'
 import { ProductCardStyeld } from './styled'
 import { Link } from 'react-router-dom'
-import { MoveToCart, OrdersNull } from '../../Icons'
 import { Info } from '../../Global/components'
 import Rating from '../Rating'
-const ProductCard = ({isFull,data:{ description,img, title, price, prevPrice, orders, freeShipping }}) => {
+import AddToCartButton from '../AddToCartButton'
+import LikeButton from '../LikeButton'
+const ProductCard = ({isFull,data:{ id,isSelected,isLike, description,img, title, price, prevPrice, orders, freeShipping }}) => {
     return (
-        <ProductCardStyeld full={isFull}>
+        <ProductCardStyeld  full={isFull} {...{isLike}}  {...{isSelected}}>
             <div className="img">
                 <img src={img} alt="" />
             </div>
@@ -21,8 +22,8 @@ const ProductCard = ({isFull,data:{ description,img, title, price, prevPrice, or
                 {isFull&&<Link to="/" className="ViewDetails">View details</Link>}
                 <p className="title">{title}</p>
                 <div className="icons">
-                    <MoveToCart/>
-                    <OrdersNull/>
+                    <AddToCartButton  {...{id}}/>
+                    <LikeButton {...{id}}/>
                 </div>
             </div>
         </ProductCardStyeld>

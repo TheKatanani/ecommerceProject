@@ -5,8 +5,7 @@ import { FilterStyled } from './Styled';
 
 const Filter = ({ setIsFull, isFull }) => {
     const [Verified, setVerified] = useState(true);
-    const [Featured, setFeatured] = useState("")
-    const togleActive = () => { setIsFull(preve => !preve) }
+    const [Featured, setFeatured] = useState("") 
     return (
         <FilterStyled>
             <p>12,911 items in <span>Mobile accessory</span></p>
@@ -21,11 +20,11 @@ const Filter = ({ setIsFull, isFull }) => {
                     <option value="Featured2">Featured 2</option>
                     <option value="Featured3">Featured 3</option>
                 </Input>
-                <Input as="div" className='mood' onClick={togleActive}>
-                    <div className={!isFull ? 'active' : ""} >
+                <Input as="div" className='mood'>
+                    <div onClick={()=>setIsFull(false)} className={!isFull ? 'active' : ""} >
                         <Menu />
                     </div>
-                    <div className={isFull ? 'active' : ""} >
+                    <div onClick={()=>setIsFull(true)} className={isFull ? 'active' : ""} >
                         <Menu2 />
                     </div>
                 </Input>

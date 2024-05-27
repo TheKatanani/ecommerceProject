@@ -5,6 +5,9 @@ import Products from '../Products'
 const MainStyled = styled.main`
     flex:1;
     margin: 30px 0 0 30px;
+    ${({theme:{media}})=>media.xs} {
+      margin: 0 ;
+    }
 `
 const Main = () => {
   const [isFull,setIsFull]=useState(false)

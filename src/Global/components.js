@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div `
-    padding: 0 15px;
+    padding: 0;
     margin: 0 auto;
 /* Small */
 @media (min-width: 768px) {
@@ -49,18 +49,26 @@ export const Info = styled.div`
             display: flex;
             justify-content:flex-start;
             align-items:baseline;
+            margin:7px 0;
+            > div , > p{
+                position:relative;
+                margin:5px 25px 5px 0;
+            }
             *:not(:last-child)::after{
-                content:".";
-                display: inline-block;
-                width:fit-content;
-                color:${(props) =>  props.theme.palette.ColorApp.gray_300};
-                font-size:${(props) => props.theme.fontSizes.h1}rem;
-                margin:5px;
+                content:"";
+                position: absolute;
+                width:8px;
+                height:8px;
+                right:-15px;
+                top:50%;
+                border-radius: 50%;
+                transform:translateY(-50%);
+                background-color:${(props) =>  props.theme.palette.ColorApp.gray_300};
             }
 `
 export const IconButton = styled.div`
     position:relative;
-     margin:10px 0;
+    margin:10px 0;
     img{
         position:absolute;
         left:11px;

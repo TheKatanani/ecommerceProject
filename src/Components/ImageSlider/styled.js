@@ -11,6 +11,10 @@ export const ImageSliderStyled = styled.div`
         border-radius: 6px;
         width:380px;
         height:380px;
+        @media (max-width: 576px) {
+            width:100%;
+        }
+
         img{
             width:315px;
         }

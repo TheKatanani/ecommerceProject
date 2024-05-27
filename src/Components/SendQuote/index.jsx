@@ -1,9 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { NewsletterButton } from '../../Global/components'
 import img from '../../Images/image102.png'
 import SendQuoteForm from '../SendQuoteForm'
 const SendQuoteStyled=styled.div`
     display: flex;
+    flex-wrap: wrap;
+    gap:30px;
     justify-content:space-between;
     border-radius: 6px;
     padding:40px 30px 60px 50px;
@@ -31,7 +34,20 @@ const SendQuoteStyled=styled.div`
         color:${(props) =>  props.theme.palette.ColorApp.white};
         font-size:${(props) => props.theme.fontSizes.body}rem;
     }
+}
+form + button{
+    position:relative;
+    display: none;
+}
+/* Small */
+@media (max-width: 576px) {
+    form,p{
+        display: none;
     }
+    form + button{
+        display: block;
+    }
+        }
 `
 const SendQuote = () => {
   return (
@@ -41,6 +57,7 @@ const SendQuote = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
         </div>
         <SendQuoteForm/>
+        <NewsletterButton>Send inquiry</NewsletterButton>
     </SendQuoteStyled>
   )
 }

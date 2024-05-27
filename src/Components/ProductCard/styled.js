@@ -4,7 +4,7 @@ export const ProductCardStyeld = styled.div `
     padding:20px;
     background-color:${(props) =>  props.theme.palette.main};
 
-    width:fit-content;
+    width:100%;
     border: 1px solid ${(props) =>  props.theme.palette.ColorApp.gray_300};;
         border-radius: 6px;
         color:${(props) =>  props.theme.palette.font};
@@ -23,6 +23,7 @@ export const ProductCardStyeld = styled.div `
     .content{
         position:relative;
         display: flex;
+        justify-content:center;
         flex-direction: column;
         .icons{
             cursor: pointer;
@@ -31,12 +32,18 @@ export const ProductCardStyeld = styled.div `
             right:0px;
             display: flex;
             gap:3px;
+            .Select svg{
+                ${props=>props.isSelected&&`background-color:${props.theme.palette.ColorApp.primary_light}`};
+            }
+            .Like svg{
+                ${props=>props.isLike&&`background-color:${props.theme.palette.ColorApp.primary_light}`};
+            }
             svg{
                 padding:5px;
                 width:30px;
                 height:30px;
                 border: 1px solid ${(props) =>  props.theme.palette.ColorApp.gray_300};;
-        border-radius: 5px;
+                border-radius: 5px;
             }
         }
         .title{
@@ -60,6 +67,10 @@ export const ProductCardStyeld = styled.div `
         }
         .description{
         color:${(props) =>  props.theme.palette.ColorApp.gray_600};
+    }
+    .ViewDetails{
+        color:${(props) =>  props.theme.palette.ColorApp.primary};
+        margin:25px 0 0 ;
         }
     }
         ${props=>props.full&&
@@ -72,6 +83,22 @@ export const ProductCardStyeld = styled.div `
                     color:${(props) =>  props.theme.palette.font};
                     order:-1;
                 }
-            }`
+            }
+            @media (max-width: 576px) {
+                .img{
+                    max-width:70px;
+                    height: unset;
+                    img{
+                        width:80%;
+                    }
+                }
+                .description,.icons,.ViewDetails{
+                    display: none !important;
+                }
+                .price + div{
+                    flex-wrap: wrap;
+                }
+            }
+            `
         };
 `

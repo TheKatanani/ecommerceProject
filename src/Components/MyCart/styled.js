@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const MyCartStyled =styled.div`
+    flex:1;
     h6{
         font-size:${(props) => props.theme.fontSizes.h6}rem;
         color:${(props) =>  props.theme.palette.font};
         margin:10px 0;
     }
     .container{
-
         padding:20px;
         background-color:${props=>props.theme.palette.main};
         border: 1px solid ${props=> props.theme.palette.ColorApp.gray_300};
@@ -18,6 +18,15 @@ export const MyCartStyled =styled.div`
     .items{
         height:490px;
         overflow-y: scroll;
+        position:relative;
+        .empty{
+            position:absolute;
+            top:50%;
+            left:50%;
+            font-size:${(props) => props.theme.fontSizes.h1}rem;
+            color:${(props) =>  props.theme.palette.font};
+            transform: translate(-50%,-50%);
+        }
         /* Scrollbar */
         ::-webkit-scrollbar {
             width: 1px;
@@ -44,6 +53,11 @@ export const MyCartStyled =styled.div`
             padding:10px;
             width:fit-content;
         }
+    }
+}
+@media (max-width: 576px) {
+    .container{
+        padding:8px;
     }
 }
 `

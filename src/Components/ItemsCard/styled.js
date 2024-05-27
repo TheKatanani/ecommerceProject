@@ -12,9 +12,9 @@ export const ItemsCardStyled = styled.div `
     .items{
         display: grid;
         ${props=>props.type==="RelatedProducts"?`
-        grid-template-columns:repeat(6,1fr);
+        grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
         `:`
-        grid-template-columns:repeat(4,1fr);
+        grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
         `}
         gap:20px;
         justify-content:space-between;

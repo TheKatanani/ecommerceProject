@@ -53,4 +53,26 @@ export const MainSecStyle=styled.div`
             height:32px;
         }
     }
+    ${({theme:{media}})=>media.xs}{
+        height: 180px;
+        padding:0;
+        ul,.userBox,.container{
+            display: none;
+        }
+    }
+    ${({theme:{media}})=>media.s}  and ${"(max-width:991px)"} {
+        flex-wrap: wrap;
+        height:auto;
+        .userBox{
+            display: grid;
+            grid-template-columns: repeat(3,auto);
+            grid-template-rows: 150px;
+            gap:10px;
+            >div{
+                width:auto;
+                height:auto;
+                margin:0;
+            }
+        }
+    }
 `

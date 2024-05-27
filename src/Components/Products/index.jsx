@@ -1,25 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
+import useProducts from '../../Hook/useProducts'
 import ProductCard from '../ProductCard'
 import SliderControl from '../SliderControl'
-import { Data } from './data'
-const ProductsStyled = styled.div`
-    .content2{
-        height:calc(100% - 40px);
-        margin: 20px 0 30px;
-        ${props=>!props.full&&`
-            display: grid;
-            grid-template-columns:repeat(3,auto);
-            gap:10px;
-        `}
-    }
-`
+import { ProductsStyled } from './styled'
+
 const Products = ({isFull}) => {
+    const {  products} = useProducts()
+
     const myData=()=>{
         if(isFull){
-            return Data.slice(0,6);
+            return products.slice(0,6);
         }
-        return Data.slice(0,9);
+        return products.slice(0,9);
     }
   return (
     <ProductsStyled full={isFull}>
@@ -28,7 +19,7 @@ const Products = ({isFull}) => {
                 <ProductCard key={i} data={el} isFull={isFull}/>
             ))}
         </div>
-        <SliderControl  content = {['Content 1', 'Content 2', 'Content 3', 'Content 4', 'Content 5']}/>
+        <SliderControl/>
     </ProductsStyled>
   )
 }

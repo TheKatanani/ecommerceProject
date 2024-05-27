@@ -8,6 +8,20 @@ const fontSizes = {
     body: 1,
     body2: 0.76,
 };
+const media = {
+    // X-Small devices (portrait phones, less than 576px)
+    xs:'@media (max-width: 575.9px)',
+    // Small devices (landscape phones, 576px and up)
+    s: '@media (min-width: 576px)',
+    // Medium devices (tablets, 768px and up)
+    m: '@media (min-width: 768px)',
+    // Large devices (desktops, 992px and up)
+    l: '@media (min-width: 992px)',
+    // X-Large devices (large desktops, 1200px and up)
+    xl: '@media (min-width: 1200px)',
+    // XX-Large devices (larger desktops, 1400px and up)
+    xxl: '@media (min-width: 1400px)'
+}
 const ColorApp = {
     primary: "#0D6EFD",
     primary_gradient: "linear-gradient(180deg, #127FFF 0%, #0067FF 100%)",
@@ -33,6 +47,7 @@ export const lightTheme = {
         font: ColorApp.dark,
     },
     fontSizes,
+    media
 };
 
 export const darkTheme = {
@@ -52,4 +67,5 @@ export const darkTheme = {
         font: ColorApp.white,
     },
     fontSizes,
+    media
 };

@@ -15,6 +15,7 @@ const PageStyled = styled.div`
     .flex{
       display: flex;
       justify-content:space-between;
+      flex-wrap: wrap;
       gap:20px;
     }
 `

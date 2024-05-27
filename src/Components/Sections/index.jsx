@@ -1,40 +1,31 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import useProducts from "../../Hook/useProducts";
+import { Message, MyCart, Orders, Profile } from "../../Icons";
+import { SectionsStyle } from "./Styled";
 
-import styled from 'styled-components'
-import { Message, MyCart, Orders, Profile } from '../../Icons'
-const SectionsStyle = styled.div`
-    display: flex;
-    gap:23px;
-    .icon{
-          padding:10px 0; 
-          text-align:center;
-        cursor: pointer;
-        font-size:${(props) => props.theme.fontSizes.body2}rem;
-        color:${(props) =>  props.theme.palette.ColorApp.gray_500};
-    }
-`
 const Sections = () => {
+  const { total } = useProducts();
+
   return (
-    <SectionsStyle>
-      <Link to="/Home/page2" className="icon">
+    <SectionsStyle productLength={total}>
+      <Link to="/home" className="icon">
         <Profile />
         <p>Profile</p>
       </Link>
-      <Link to="" className="icon">
+      <Link to="/page2" className="icon">
         <Message />
         <p>Message</p>
       </Link>
-      <Link to="/Home/page3" className="icon">
+      <Link to="/page3" className="icon">
         <Orders />
         <p>Orders</p>
-      </Link >
-      <Link to="/Home/page4" className="icon">
+      </Link>
+      <Link to="/page4" className="icon">
         <MyCart />
         <p>My cart</p>
-      </Link >
+      </Link>
     </SectionsStyle>
-  )
-}
+  );
+};
 
-export default Sections
+export default Sections;
